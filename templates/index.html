@@ -21,6 +21,7 @@
     <main>
         <p>Enter your text:</p>
         <input type="text" id="textInput" placeholder="Type here...">
+        <textarea id="text_input" name="text_input" rows="4" cols="50" required></textarea>
         <button onclick="showEnteredText()">Submit</button>
         <p id="output"></p>
     </main>
@@ -55,13 +56,14 @@
     
     <form action="/predict_sentiment" method="post">
        
-        <label for="text_input">Enter text:</label>
-        <textarea id="text_input" name="text_input" rows="4" cols="50" required></textarea>
+        <p>Enter your text:</p>
+        
+        <input type="text" name="text_input" id="text_input" placeholder="Type here..." required>
         <br>
         <input type="submit" value="Predict">
     </form>
     <footer>
-        <p>&copy; 2023 Blue-Purple Themed Website | Made with love ❤️ by GPT</p>
+        <p>&copy; 2023 Made with love ❤️ by Tarun and Likhith</p>
     </footer>
 </body>
 </html>

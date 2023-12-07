@@ -1,0 +1,85 @@
+/* body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+} */
+
+
+/* Style for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #fff;
+}
+
+/* Style for the h1 heading */
+h1 {
+    background-color: #3b5998;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Style for paragraphs */
+p {
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Style for the "Back to Home" link */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 47%;
+    /* margin-right: auto; */
+}
+
+/* Style for the container */
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for the form input and textarea */
+input[type="text"],
+textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 60%;
+    font-size: 16px;
+}
+
+/* Style for the form submit button */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #5a67d8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
