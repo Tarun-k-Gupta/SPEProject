@@ -19,6 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'pip3 install --upgrade pip'
+                sh 'pip install -r requirements.txt'
                 sh '''cd backend
                     python3 download_models.py'''
             }
