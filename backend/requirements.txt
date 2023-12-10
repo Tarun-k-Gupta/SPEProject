@@ -1,0 +1,6 @@
+Flask
+requests
+gdown
+transformers
+torch
+torchvision
