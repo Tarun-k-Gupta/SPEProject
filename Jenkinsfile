@@ -46,13 +46,24 @@ pipeline {
             }
         }
 
-        stage('Stage 6: Push docker images') {
+        stage('Stage 6: Push frontend docker image') {
 
             steps {
 
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
                         frontend_docker_image.push()
+                    }
+                }
+            }
+        }
+
+        stage('Stage 7: Push backend docker image') {
+
+            steps {
+
+                script {
+                    docker.withRegistry('', 'DockerHubCred') {
                         backend_docker_image.push()
                     }
                 }
