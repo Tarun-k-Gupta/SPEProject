@@ -27,6 +27,7 @@ def predict():
             predictions = []
 
             for model in models:
+                if model == 'trainer': continue
                 classifier = pipeline('sentiment-analysis', model=os.path.join(path_to_models, model))
                 result = classifier(text)
                 label = result[0]['label']
@@ -41,4 +42,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(port=6000, debug=True)
+    app.run(port=6000, debug=True, host='0.0.0.0')

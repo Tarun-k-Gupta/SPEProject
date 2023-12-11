@@ -47,4 +47,4 @@ def predict_sentiment():
         return render_template("result.html", err=e)
 
 if __name__ == "__main__":
-    app.run(port=PORT, debug=True)
+    app.run(port=PORT, debug=True, host='0.0.0.0')
