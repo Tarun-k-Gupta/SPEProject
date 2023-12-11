@@ -26,7 +26,7 @@ def predict_sentiment():
 
             if response.status_code == 200:
                 
-                predictions = response.json().get('predictions', 'Error: No prediction received')
+                predictions = response.json().get('predictions')
 
                 n = len(predictions)
 

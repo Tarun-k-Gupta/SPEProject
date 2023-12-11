@@ -10,8 +10,8 @@ def predict():
     try:
         if request.method == 'POST':
 
-            path_to_models = 'BERTModels'
-            models = os.listdir(path_to_models)
+            # path_to_models = 'BERTModels'
+            # models = os.listdir(path_to_models)
             
             if 'user_text' not in request.files:
                 return jsonify({'error': 'No file found in the request'})
@@ -26,12 +26,17 @@ def predict():
 
             predictions = []
 
-            for model in models:
-                if model == 'trainer': continue
-                classifier = pipeline('sentiment-analysis', model=os.path.join(path_to_models, model))
-                result = classifier(text)
-                label = result[0]['label']
-                predictions.append(label)
+            # for model in models:
+            #     if model == 'trainer': continue
+            #     classifier = pipeline('sentiment-analysis', model=os.path.join(path_to_models, model))
+            #     result = classifier(text)
+            #     label = result[0]['label']
+            #     predictions.append(label)
+
+            classifier = pipeline('sentiment-analysis', model='nvsl/bert-for-harsh')
+            result = classifier(text)
+            label = result[0]['label']
+            predictions.append(label)
 
             # To be changed later after integrating remaining models
 

@@ -48,13 +48,14 @@ pipeline {
             }
         }
 
-        stage('Stage 6: Push frontend docker images') {
+        stage('Stage 6: Push docker images') {
 
             steps {
 
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
                         frontend_docker_image.push()
+                        backend_docker_image.push()
                     }
                 }
             }
