@@ -41,7 +41,7 @@ pipeline {
         stage('Stage 5: Docker image - backend') {
             steps {
                 script {
-                    backend_docker_image = docker.build("nvsailikhith/sentiment_analysis_frontend:latest", "./backend")
+                    backend_docker_image = docker.build("nvsailikhith/sentiment_analysis_backend:latest", "./backend")
                 }
             }
         }
