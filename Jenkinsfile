@@ -69,5 +69,30 @@ pipeline {
                 }
             }
         }
+
+        stage('Stage 8: Clear Cache') {
+            steps {
+
+                sh 'docker container prune -f'
+                sh 'docker image prune -f'
+            }
+        }
+
+        stage('Stage 9: Ansible Deploy') {
+            steps {
+                ansiblePlaybook becomeUser: null,
+                colorized: true,
+                credentialsId: 'localhost',
+                disableHostKeyChecking: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'ansible-playbook.yml',
+                sudoUser: null
+
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh 'docker-compose down' //Stopping and removing the containers and networks linked to the project
+                sh 'docker rmi -f $(docker images -q)' //Cleaning up images
+            }
+        }
     }
 }

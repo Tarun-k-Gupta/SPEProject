@@ -16,7 +16,7 @@ def predict_sentiment():
         if request.method == 'POST':
             text_input = request.form.get('text_input', '')
 
-            response = requests.post("http://127.0.0.1:6000/", files={'user_text': text_input})
+            response = requests.post("http://backend:6000/", files={'user_text': text_input})
 
 
             # label = sentiment_prediction[0]['label']

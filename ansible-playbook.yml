@@ -1,0 +1,20 @@
+---
+- name: Deploy Docker Images
+  hosts: all
+
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
+  tasks:
+
+    - name: Start docker service
+      service: 
+        name: docker
+        state: started
+        
+    - name: Pull the docker images
+      command: docker-compose pull
+    
+    - name: Run the docker images (detached mode)
+      command: docker-compose up -d
+      
