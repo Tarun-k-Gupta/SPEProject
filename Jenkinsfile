@@ -24,9 +24,11 @@ pipeline {
             }
         }
 
-        stage('Stage 3: Test') {
+        // stage('Stage 3: Test') {
+        //     steps {
 
-        }
+        //     }
+        // }
 
         stage('Stage 4: Docker image - frontend') {
 
