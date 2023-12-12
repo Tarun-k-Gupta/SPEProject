@@ -91,7 +91,6 @@ pipeline {
 
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh 'docker-compose down' //Stopping and removing the containers and networks linked to the project
-                sh 'docker rmi -f $(docker images -q)' //Cleaning up images
             }
         }
     }
