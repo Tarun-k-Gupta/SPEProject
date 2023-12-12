@@ -31,6 +31,8 @@ def predict_sentiment():
                 n = len(predictions)
 
                 for i, key in enumerate(predictions):
+                    key = str(key)
+                    if key.startswith('NOT_'): key = 'not ' + key.split('_')[-1]
                     label += str(key)
                     if i < n-2: label += ', '
                     elif i == n-2: label += ' and '

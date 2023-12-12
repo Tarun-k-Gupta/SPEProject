@@ -26,12 +26,6 @@ def predict():
 
             predictions = []
 
-            # for model in models:
-            #     if model == 'trainer': continue
-            #     classifier = pipeline('sentiment-analysis', model=os.path.join(path_to_models, model))
-            #     result = classifier(text)
-            #     label = result[0]['label']
-            #     predictions.append(label)
 
             classifier = pipeline('sentiment-analysis', model='nvsl/bert-for-harsh')
             result = classifier(text)

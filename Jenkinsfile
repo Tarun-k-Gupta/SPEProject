@@ -19,14 +19,18 @@ pipeline {
             steps {
                 sh 'pip3 install --upgrade pip'
                 sh 'pip install -r requirements.txt'
+                sh 'pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu'
             }
         }
 
-        // stage('Stage 3: Test') {
-        //     steps {
+        stage('Stage 3: Test') {
+            steps {
 
-        //     }
-        // }
+                sh '''cd tester
+                    python3 tester.py'''
+
+            }
+        }
 
         stage('Stage 4: Docker image - frontend') {
 
