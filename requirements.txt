@@ -1,4 +1,2 @@
 gdown
-unittest
-subprocess
 transformers
