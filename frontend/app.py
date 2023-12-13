@@ -42,7 +42,7 @@ def predict_sentiment():
                     raise Exception("Error extracting text from Twitter URL")
 
             # Perform sentiment analysis using the backend API
-            response = requests.post("backend:6000/", files={'user_text': text_input})
+            response = requests.post("http://backend:6000/", files={'user_text': text_input})
 
             label = 'The statement is '
 
