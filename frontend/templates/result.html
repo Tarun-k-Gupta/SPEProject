@@ -6,13 +6,20 @@
     <title>Sentiment Analysis Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
 </head>
+
 <body>
     <h1>Sentiment Analysis Result</h1>
-    <p>Text input: {{ text_input }}</p>
-    <p>{{ label }}</p>
-    <p>{{ err }}</p>
-    <!-- <p>Sentiment score: {{ score }}</p> -->
+    <div class="result-container">
+        <div class="result-box">
+            <h2>Input text</h2>
+            <p>{{ text_input }}</p>
+        </div>
+        <div class="result-box">
+            <h2>Result</h2>
+            <p>{{ label }}</p>
+        </div>
+    </div>
     <br>
-    <a href="/">Back to Home</a>
+    <a href="/" class="home-link">Back to Home</a>
 </body>
 </html>

@@ -1,29 +1,4 @@
-/* body {
-    font-family: 'Arial', sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
 
-h1 {
-    color: #333;
-}
-
-p {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin-top: 20px;
-} */
-
-
-/* Style for the body */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -32,7 +7,6 @@ body {
     color: #fff;
 }
 
-/* Style for the h1 heading */
 h1 {
     background-color: #3b5998;
     padding: 10px;
@@ -40,14 +14,12 @@ h1 {
     color: #fff;
 }
 
-/* Style for paragraphs */
 p {
     color: #fff;
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* Style for the "Back to Home" link */
 a {
     color: #fff;
     text-decoration: none;
@@ -55,16 +27,14 @@ a {
     display: inline-block;
     margin-top: 20px;
     margin-left: 47%;
-    /* margin-right: auto; */
+    
 }
 
-/* Style for the container */
 .container {
     padding: 20px;
     text-align: center;
 }
 
-/* Style for the form input and textarea */
 input[type="text"],
 textarea {
     padding: 10px;
@@ -73,7 +43,6 @@ textarea {
     font-size: 16px;
 }
 
-/* Style for the form submit button */
 input[type="submit"] {
     padding: 10px 20px;
     background-color: #5a67d8;
@@ -82,4 +51,59 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+}
+
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    
+    /* flex-direction: column; */
+}
+
+/* Style for the text input box */
+.input-box {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style for the result box */
+.result-box {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #3b5998;
+    border-radius: 10px;
+    margin: 15px;
+    margin-top: 100px;
+}
+
+/* Style for the result box heading */
+.result-box h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style for the "Back to Home" link */
+.home-link {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 47%;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the "Back to Home" link */
+.home-link:hover {
+    background-color: #fff;
+    color: #3b5998;
 }
