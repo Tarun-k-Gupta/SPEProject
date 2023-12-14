@@ -42,7 +42,7 @@ def predict_sentiment():
             text_input = request.form.get('text_input', '')
 
             # Check if the input is a Twitter link
-            if text_input.startswith('https://twitter.com/'):
+            if text_input.startswith('https://twitter.com/') or text_input.startswith('https://x.com/') :
                 # Extract text from the Twitter link
                 tweet_text = extract_text_from_twitter_link(text_input)
                 if tweet_text:
@@ -51,7 +51,7 @@ def predict_sentiment():
                     raise Exception("Error extracting text from Twitter URL")
 
             # Perform sentiment analysis using the backend API
-            response = requests.post("http://127.0.0.1:6000/", files={'user_text': text_input})
+            response = requests.post("http://backend:6000/", files={'user_text': text_input})
 
             label = 'The statement is '
 
