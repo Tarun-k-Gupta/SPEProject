@@ -1,12 +1,21 @@
 from flask import Flask, render_template, request
 import requests
 from apify_client import ApifyClient
-
+import logging
 app = Flask(__name__)
 PORT = 5000
 
 # Initialize the ApifyClient with your API token
 client = ApifyClient("apify_api_2QGQH8DkI54nayPr5grpIauvPmWqFL3NwQ4M")
+
+log_file_path = './logs/log_output.log'
+
+formatter = logging.Formatter('%(asctime)s %(message)s')  # Setting the desired log format
+
+app.logger.setLevel(logging.INFO)  # Set log level to INFO
+handler = logging.FileHandler(log_file_path)  # Log to the file
+handler.setFormatter(formatter)
+app.logger.addHandler(handler)
 
 # Function to extract text from a Twitter link using Apify
 def extract_text_from_twitter_link(tweet_url):
@@ -42,7 +51,7 @@ def predict_sentiment():
                     raise Exception("Error extracting text from Twitter URL")
 
             # Perform sentiment analysis using the backend API
-            response = requests.post("http://backend:6000/", files={'user_text': text_input})
+            response = requests.post("http://127.0.0.1:6000/", files={'user_text': text_input})
 
             label = 'The statement is '
 
@@ -58,7 +67,9 @@ def predict_sentiment():
                     if i < n-2: label += ', '
                     elif i == n-2: label += ' and '
                     elif i == n-1: label += '.'
-
+                    
+                app.logger.info("Prediction for input text: %s is  %s",str(text_input), str(label))
+                
                 return render_template("result.html", label=label, text_input=text_input)
 
             else:
