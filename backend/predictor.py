@@ -25,12 +25,17 @@ def predict():
             text = user_file.read().decode('utf-8')
 
             predictions = []
+            classifiers = {}
+
+            classifiers['harsh'] = pipeline('sentiment-analysis', model='nvsl/bert-for-harsh')
+            classifiers['threatening'] = pipeline('sentiment-analysis', model='nvsl/bert-for-threatening')
+            sentiments = classifiers.keys()
 
 
-            classifier = pipeline('sentiment-analysis', model='nvsl/bert-for-harsh')
-            result = classifier(text)
-            label = result[0]['label']
-            predictions.append(label)
+            for sentiment in sentiments:           
+                result = classifiers[sentiment](text)
+                label = result[0]['label']
+                predictions.append(label)
 
             # To be changed later after integrating remaining models
 
