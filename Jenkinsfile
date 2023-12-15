@@ -11,7 +11,7 @@ pipeline {
 
         stage('Stage 1: Git pull') {
             steps {
-                git url: 'https://github.com/Tarun-k-Gupta/SPEProject.git', branch: 'master'
+                git url: 'https://github.com/Tarun-k-Gupta/SPEProject.git', branch: 'main'
             }
         }
 
