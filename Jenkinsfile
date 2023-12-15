@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        registry = 'nvsailikhith/sentiment-analysis'
+        registry = 'tarun/sentiment-analysis'
         DOCKERHUB_CREDS = credentials('DockerHubCred')
     }
 
@@ -11,7 +11,7 @@ pipeline {
 
         stage('Stage 1: Git pull') {
             steps {
-                git url: 'https://github.com/Likhith-2914/Sentiment-Analysis.git', branch: 'master'
+                git url: 'https://github.com/Tarun-k-Gupta/SPEProject.git', branch: 'master'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 
                 script {
-                    frontend_docker_image = docker.build("nvsailikhith/sentiment_analyzer_frontend:latest", "./frontend")
+                    frontend_docker_image = docker.build("tarun/sentiment_analyzer_frontend:latest", "./frontend")
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
         stage('Stage 5: Docker image - backend') {
             steps {
                 script {
-                    backend_docker_image = docker.build("nvsailikhith/sentiment_analyzer_backend:latest", "./backend")
+                    backend_docker_image = docker.build("tarun/sentiment_analyzer_backend:latest", "./backend")
                 }
             }
         }
