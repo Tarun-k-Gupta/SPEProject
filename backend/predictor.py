@@ -28,7 +28,7 @@ def predict():
             classifiers = {}
 
             classifiers['harsh'] = pipeline('sentiment-analysis', model='nvsl/bert-for-harsh')
-            classifiers['threatening'] = pipeline('sentiment-analysis', model='nvsl/bert-for-threatening')
+            # classifiers['threatening'] = pipeline('sentiment-analysis', model='nvsl/bert-for-threatening')
             sentiments = classifiers.keys()
 
 
