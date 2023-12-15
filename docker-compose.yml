@@ -1,13 +1,13 @@
 services:
   frontend:
-    image: nvsailikhith/sentiment_analysis_frontend:latest
+    image: nvsailikhith/sentiment_analyzer_frontend:latest
     container_name: sentiment_analysis_frontend
     stdin_open: true
     ports:
       - "5000:5000"
   
   backend:
-    image: nvsailikhith/sentiment_analysis_backend:latest
+    image: nvsailikhith/sentiment_analyzer_backend:latest
     container_name: sentiment_analysis_backend
     stdin_open: true
     ports:
