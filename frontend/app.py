@@ -5,9 +5,6 @@ import logging
 app = Flask(__name__)
 PORT = 5000
 
-# Initialize the ApifyClient with your API token
-client = ApifyClient("apify_api_2QGQH8DkI54nayPr5grpIauvPmWqFL3NwQ4M")
-
 log_file_path = './logs/log_output.log'
 
 formatter = logging.Formatter('%(asctime)s %(message)s')  # Setting the desired log format
@@ -19,6 +16,9 @@ app.logger.addHandler(handler)
 
 # Function to extract text from a Twitter link using Apify
 def extract_text_from_twitter_link(tweet_url):
+    # Initialize the ApifyClient with your API token
+    client = ApifyClient("apify_api_2QGQH8DkI54nayPr5grpIauvPmWqFL3NwQ4M")    
+    
     run_input = {
         "startUrls": [{"url": tweet_url}],
         "tweetsDesired": 1,
