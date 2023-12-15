@@ -6,6 +6,11 @@
     ansible_python_interpreter: /usr/bin/python3
 
   tasks:
+
+    - name: Start docker service
+      service: 
+        name: docker
+        state: started
         
     - name: Pull the docker images
       command: docker-compose pull
